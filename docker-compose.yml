@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web:
+    build:
+     context: .
+     dockerfile: Dockerfile
+    ports:
+     - "8080:8080"
+  storybook:
+    build:
+     context: .
+     dockerfile: Storybook-Dockerfile
+    command: ["npm", "run", "storybook"]
+    ports:
+     - "9001:9001"
